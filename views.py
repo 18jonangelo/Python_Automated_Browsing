@@ -5,6 +5,7 @@ from tkinter.ttk import *  #progressbar
 import sys #exitbtn
 import random #randomNumbers
 
+
 # import  eel
 #
 # eel.start('index.html')
@@ -50,6 +51,36 @@ def btnFunction():
     # driver3.refresh()
 
 
+def addFunction():
+
+    def submitFunc():
+        descript = descEntry.get()
+        urlAdd = urlEntry.get()
+
+
+
+    addMaster= Tk()
+    addMaster.title("Add New URL")
+    addMaster.geometry("300x100+350+250")
+
+    desc1Label = Label(addMaster, text="")
+    desc1Label.grid(row=1, column=0)
+
+    descLabel = Label(addMaster, text="Description:")
+    descLabel.grid(row = 2, column = 0)
+
+    urlLabel = Label(addMaster, text="URL:")
+    urlLabel.grid(row = 4, column = 0)
+
+
+    descEntry = Entry(addMaster)
+    descEntry.grid(row = 2, column = 3)
+
+    urlEntry = Entry(addMaster)
+    urlEntry.grid(row=4, column=3)
+
+    submitBtn = Button(addMaster, text="Submit", command=submitFunc)
+    submitBtn.grid(row=6,column=3)
 
 
 def exitBtn():
@@ -61,11 +92,14 @@ b = Button(root, text="Execute", command=btnFunction)
 # b.pack(side=tkinter.LEFT)
 b.grid(row=1,column=1)
 
-# addBtn = Button(root, text="Add New URL", command=addunction)
-# # b.pack(side=tkinter.LEFT)
-# b.grid(row=1,column=2)
-
+addBtn = Button(root, text="Add New URL", command=addFunction)
+addBtn.grid(row=1,column=2)
 
 bExit = Button(root, text="   Exit   ", command=exitBtn)
-bExit.grid(row=1,column=2)
+bExit.grid(row=1,column=3)
+
+
+
+
+
 root.mainloop()
